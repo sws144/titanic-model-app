@@ -12,7 +12,6 @@ app = Flask(__name__)
 
 # routes
 @app.route('/',methods=['POST'])
-
 def predict():
     # get data
     data = request.get_json(force = True)
@@ -29,6 +28,10 @@ def predict():
     
     # return data
     return jsonify(result=output)
+
+@app.route('/')
+def index():
+    return "<h1>Welcome to our server !!</h1>"
 
 if __name__ == '__main__':
     app.run(port = 5000, debug= True)
