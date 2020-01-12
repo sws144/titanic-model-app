@@ -16,6 +16,7 @@ def main():
     if request.method == 'GET':
         return(render_template('main.html'))
     if request.method == 'POST':
+        # should match from the main.html form
         pclass = request.form['Pclass']
         age = request.form['Age']
         sibSp = request.form['SibSp']
