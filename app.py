@@ -1,7 +1,7 @@
 # flask app file
 
 import pandas as pd
-from flask import Flask, jsonify, request
+from flask import Flask, jsonify, request, render_template
 import pickle
 
 #load model
@@ -31,7 +31,7 @@ def predict():
 
 @app.route('/')
 def main():
-    return(flask.render_template('main.html'))
+    return(render_template('main.html'))
 
 if __name__ == '__main__':
     app.run()
