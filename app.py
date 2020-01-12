@@ -8,7 +8,7 @@ import pickle
 model = pickle.load(open('model.pkl','rb'))
 
 # app
-app = Flask(__name__)
+app = Flask(__name__, template_folder='templates')
 
 # routes
 @app.route('/',methods=['POST'])
@@ -30,9 +30,8 @@ def predict():
     return jsonify(result=output)
 
 @app.route('/')
-def index():
-    return "<h1>Welcome to our server !!</h1>"
+def main():
+    return(flask.render_template('main.html'))
 
 if __name__ == '__main__':
-    app.run(port = 5000, debug= True)
-    
+    app.run()
