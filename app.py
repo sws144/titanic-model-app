@@ -1,4 +1,5 @@
 # flask app file
+# type "flask run" in app.py's directory to run
 
 import pandas as pd
 from flask import Flask, jsonify, request, render_template

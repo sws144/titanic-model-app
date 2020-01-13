@@ -12,16 +12,17 @@ form {
 </style><head>
     <title>Titanic Model - sws144</title>
 </head>
+This is a sample model to to predict the survival of a person on the Titanic
 <form action="{{ url_for('main') }}" method="POST">
     <fieldset>
         <legend>Input values:</legend>
-        Pclass:
+        Ticket Class (1, 2, 3):
         <input name="Pclass" type="number" required>
         <br>
         <br> Age:
         <input name="Age" type="number" required>
         <br>
-        <br> Sibsp:
+        <br> Number of Siblings aboard:
         <input name="SibSp" type="number" required>
         <br>
         <br> Fare:
@@ -38,7 +39,7 @@ form {
             <b>{{ variable }}</b> : {{ value }}
         {% endfor %}
         <br>
-        <br> Predictive Survival(1)  or Not (0):
+        <br> Predicted Survival (1)  or Not (0):
            <p style="font-size:50px">{{ result }}</p>
     {% endif %}
 </div></html>
