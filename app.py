@@ -22,9 +22,18 @@ def main():
         age = request.form['Age']
         sibSp = request.form['SibSp']
         fare = request.form['Fare']        
+        sex = request.form['Sex']
         
-        input_variables = pd.DataFrame([[pclass, age, sibSp, fare]],
-                columns=['Pclass', 'Age', 'SibSp','Fare'],
+        if (sex == 'F'):
+            sex1 = 0 
+            sex0 = 1
+        else :
+            sex1 = 1 # 1 is male
+            sex0 = 0
+        
+        
+        input_variables = pd.DataFrame([[pclass, age, sibSp, fare, sex0, sex1]],
+                columns=['Pclass', 'Age', 'SibSp','Fare', 'Sex-0','Sex-1'],
                 dtype=int)        
         
         prediction = model.predict(input_variables)[0]        
@@ -33,8 +42,9 @@ def main():
                 original_input={'Pclass': pclass,
                                 'Age':age,
                                 'Sibsp':sibSp,
-                                'Fare': fare},
-                result=prediction
+                                'Fare': fare ,
+                                'Sex:': sex},
+                result=str(prediction)
         )
 
 # def predict():

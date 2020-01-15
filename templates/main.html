@@ -12,7 +12,9 @@ form {
 </style><head>
     <title>Titanic Model - sws144</title>
 </head>
+<center>
 This is a sample model to to predict the survival of a person on the Titanic
+</center>
 <form action="{{ url_for('main') }}" method="POST">
     <fieldset>
         <legend>Input values:</legend>
@@ -25,8 +27,12 @@ This is a sample model to to predict the survival of a person on the Titanic
         <br> Number of Siblings aboard:
         <input name="SibSp" type="number" required>
         <br>
-        <br> Fare:
+        <br> Fare (number):
         <input name="Fare" type="number" required>
+        <br>
+        <br>
+        <br> Sex (M or F, defaults to M):
+        <input name="Sex" type="text" required>
         <br>
         <br>
         <input type="submit">
