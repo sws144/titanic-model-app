@@ -47,6 +47,11 @@ def main():
                 result=str(prediction)
         )
 
+@app.route('/doc',methods=['GET'])
+def doc():
+    if request.method == 'GET':
+        return(render_template('titanic-logistic.html'))
+
 # def predict():
 #     # get data
 #     data = request.get_json(force = True)
