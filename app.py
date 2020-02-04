@@ -50,7 +50,7 @@ def main():
 @app.route('/doc',methods=['GET'])
 def doc():
     if request.method == 'GET':
-        return(render_template('titanic-logistic.html'))
+        return(render_template('titanic-logistic.html')) # need to update this with every version update
 
 # def predict():
 #     # get data
