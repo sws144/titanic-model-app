@@ -7,6 +7,7 @@ import pickle
 
 #load model
 model = pickle.load(open('model.pkl','rb'))
+scaler = pickle.load(open('scaler.pkl','rb'))
 
 # app
 app = Flask(__name__, template_folder='templates')
@@ -35,6 +36,8 @@ def main():
         input_variables = pd.DataFrame([[pclass, age, sibSp, fare, sex0, sex1]],
                 columns=['Pclass', 'Age', 'SibSp','Fare', 'Sex-0','Sex-1'],
                 dtype=int)        
+        
+        input_variables = scaler.transform(input_variables) 
         
         prediction = model.predict(input_variables)[0]        
         
